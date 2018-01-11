@@ -22,6 +22,7 @@ function createWindow () {
   mainWindow = new BrowserWindow({width: 800, height: 600, frame: true, fullscreen: true, title: appName})
   mainWindow.maximize()
   mainWindow.setFullScreen(true)
+  mainWindow.runningInElectron = true
 
   // and load the index.html of the app.
   mainWindow.loadURL(url.format({
