@@ -4,6 +4,9 @@ const app = electron.app
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
 
+
+const appName = "Magic Mirror"
+
 const path = require('path')
 const url = require('url')
 
@@ -13,9 +16,12 @@ let mainWindow
 
 function createWindow () {
   // Create the browser window.
-  mainWindow = new BrowserWindow({width: 800, height: 600, frame: true, fullscreen: false})
-  // mainWindow.maximize()
-  // mainWindow.setFullScreen(true)
+  // mainWindow = new BrowserWindow({width: 800, height: 600, frame: true, fullscreen: false})
+
+// alternative: sullscreen
+  mainWindow = new BrowserWindow({width: 800, height: 600, frame: true, fullscreen: true, title: appName})
+  mainWindow.maximize()
+  mainWindow.setFullScreen(true)
 
   // and load the index.html of the app.
   mainWindow.loadURL(url.format({
