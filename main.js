@@ -23,6 +23,9 @@ function createWindow () {
   mainWindow.maximize()
   mainWindow.setFullScreen(true)
 
+  app.setBadgeCount(44)
+  app.setBadgeCount()
+
   // and load the index.html of the app.
   mainWindow.loadURL(url.format({
     pathname: path.join(__dirname, './index.html'), //./magicmirror/index.html
@@ -30,11 +33,8 @@ function createWindow () {
     slashes: true
   }))
 
-  const electron = require('electron')
-  
-
   // Open the DevTools.
-  // mainWindow.webContents.openDevTools()
+  mainWindow.webContents.openDevTools()
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {
